@@ -1,0 +1,24 @@
+body{
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+thead{
+	background: #337ab7;
+	color: white;
+}
+.codeBlock{
+	max-height: 450px;
+	overflow-y: scroll;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.imgBlock{
+}
+.tab-pane{
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 5px;
+}
+.panel-body{
+	padding: 0;
+}

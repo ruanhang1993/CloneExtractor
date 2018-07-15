@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.CCStreamProperty" table="cc_stream_property" catalog="zhonghui_data">
+        <id name="stream" type="string">
+            <column name="stream" />
+            <generator class="assigned" />
+        </id>
+        <property name="blstream" type="string">
+            <column name="blstream" />
+        </property>
+        <property name="view" type="string">
+            <column name="view" />
+        </property>
+        <property name="viewLocalPath" type="string">
+            <column name="view_local_path" />
+        </property>
+    </class>
+</hibernate-mapping>

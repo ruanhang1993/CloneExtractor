@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>数据备份</title>
+<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet"
+	href="bootstrap-3.3.5/dist/css/bootstrap-theme.min.css">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+	media="screen">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+	media="screen">
+
+<link rel="stylesheet" type="text/css" href="css/version.css">
+<link rel="stylesheet" type="text/css" href="css/my.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="bootstrap-3.3.5/jquery-3.1.0.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"
+	charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js"
+	charset="UTF-8"></script>
+
+<script src="js/databaseOperation.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="projects.html">
+		        <img src="img/icon.png">
+		      </a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		    	<ul class="nav navbar-nav">
+			        <li><a href="projects.html">主页</a></li>
+			        <!-- <li><a href="projectconfigure.html">项目配置</a></li> -->
+			        <li><a href="cloneconfigure.html">工具配置</a></li>
+			    </ul>
+		    </div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div class="pageTitle">
+					<div class="titleFont">数据库备份</div>
+					<hr class="titleHr">
+				</div>
+				<br />
+				<ul id="myTab" class="nav nav-tabs">
+					<li id="backup_li" class="active"><a id="backup_a" href="#backup" data-toggle="tab">备份</a></li>
+				    <li id="restore_li"><a id="restore_a" href="#restore" data-toggle="tab">恢复</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="backup">
+				    	<div class="row">
+				    		<div class="col-sm-2"></div>
+				    		<div class="col-sm-8">
+				    			<div class="inputSingle hidden">
+				    				<label>起始</label>
+									<input id="date1" size="16" type="text" value="" readonly class="my-timer form_datetime" style="width:100%;">
+								</div>
+								<div class="inputSingle hidden">
+				    				<label>终止</label>
+									<input id="date2" size="16" type="text" value="" readonly class="my-timer form_datetime" style="width:100%;">
+								</div>
+								<div class="inputSingle hidden">
+				    				<span class="desSpan">清除备份数据: </span>
+									<label class="radio-inline">
+									    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">是
+									</label>
+									<label class="radio-inline">
+									    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0" checked>否
+									</label>
+								</div>
+								<div class="inputSingle">
+				    				<label>目标地址</label>
+									<input id="data_address" size="16" type="text" class="my-timer" style="width:100%;" placeholder="填写地址，为空使用默认地址">
+								</div>
+								<button class="btn btn-primary" onclick="backup()" style="width:100%;">备份</button>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="restore">
+				    	<div class="row">
+				    		<div class="col-sm-2"></div>
+				    		<div class="col-sm-8">
+				    			<div class="inputSingle">
+				    				<label>选择恢复所用文件</label>
+									<select id="restoreFile"></select>
+								</div>
+								<button class="btn btn-primary" onclick="restore()" style="width:100%;">恢复</button>
+				    		</div>
+						</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="cn.edu.fudan.se.clonedetector.bean.Compare" table="compare"
+		catalog="zhonghui_data">
+		<id name="compareId" type="java.lang.Integer">
+			<column name="compare_id" />
+			<generator class="increment" />
+		</id>
+		<property name="processDate" type="timestamp">
+            <column name="process_date" length="0" />
+        </property>
+        <property name="processDoneDate" type="timestamp">
+            <column name="process_done_date" length="0" />
+        </property>
+		<property name="changeId" type="java.lang.Integer">
+			<column name="change_id" />
+		</property>
+		<property name="projectId" type="java.lang.Integer">
+			<column name="project_id" />
+		</property>
+		<property name="cloneInChangeId" type="java.lang.Integer">
+			<column name="clone_in_change_id" />
+		</property>
+		<property name="commitId" type="java.lang.Integer">
+			<column name="commit_id" />
+		</property>
+		<property name="preCommitId" type="java.lang.Integer">
+			<column name="pre_commit_id" />
+		</property>
+		<property name="revisionId" type="string">
+			<column name="revision_id" />
+		</property>
+		<property name="preRevisionId" type="string">
+			<column name="pre_revision_id" />
+		</property>
+		<property name="timeSpan" type="string">
+			<column name="time_span" />
+		</property>
+		<property name="versionSpan" type="java.lang.Integer">
+			<column name="version_span" />
+		</property>
+		<property name="changeFileNum" type="java.lang.Integer">
+			<column name="change_file_num" />
+		</property>
+		<property name="cloneChangeFileNum" type="java.lang.Integer">
+			<column name="clone_change_file_num" />
+		</property>
+		<property name="loc" type="java.lang.Integer">
+			<column name="loc" />
+		</property>
+		<property name="eloc" type="java.lang.Integer">
+			<column name="eloc" />
+		</property>
+		<property name="cloc" type="java.lang.Integer">
+			<column name="cloc" />
+		</property>
+		<property name="ecloc" type="java.lang.Integer">
+			<column name="ecloc" />
+		</property>
+		<property name="chloc" type="java.lang.Integer">
+			<column name="chloc" />
+		</property>
+		<property name="echloc" type="java.lang.Integer">
+			<column name="echloc" />
+		</property>
+		<property name="compareDate" type="timestamp">
+			<column name="compare_date" length="0" />
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="status" />
+		</property>
+		<property name="fileNum" type="java.lang.Integer">
+			<column name="file_num" />
+		</property>
+		<property name="cloneFileNum" type="java.lang.Integer">
+			<column name="clone_file_num" />
+		</property>
+		<property name="dcloc" type="java.lang.Integer">
+			<column name="dcloc" />
+		</property>
+		<property name="edcloc" type="java.lang.Integer">
+			<column name="edcloc" />
+		</property>
+		<property name="bloc" type="java.lang.Integer">
+			<column name="bloc" />
+		</property>
+		<property name="cmloc" type="java.lang.Integer">
+			<column name="cmloc" />
+		</property>
+		<property name="bcloc" type="java.lang.Integer">
+			<column name="bcloc" />
+		</property>
+		<property name="cmcloc" type="java.lang.Integer">
+			<column name="cmcloc" />
+		</property>
+		<property name="bdcloc" type="java.lang.Integer">
+			<column name="bdcloc" />
+		</property>
+		<property name="cmdcloc" type="java.lang.Integer">
+			<column name="cmdcloc" />
+		</property>
+		<property name="bchloc" type="java.lang.Integer">
+			<column name="bchloc" />
+		</property>
+		<property name="cmchloc" type="java.lang.Integer">
+			<column name="cmchloc" />
+		</property>
+		<property name="ccloc" type="java.lang.Integer">
+			<column name="ccloc" />
+		</property>
+		<property name="eccloc" type="java.lang.Integer">
+			<column name="eccloc" />
+		</property>
+		<property name="aloc" type="java.lang.Integer">
+			<column name="aloc" />
+		</property>
+		<property name="ealoc" type="java.lang.Integer">
+			<column name="ealoc" />
+		</property>
+		<property name="dloc" type="java.lang.Integer">
+			<column name="dloc" />
+		</property>
+		<property name="edloc" type="java.lang.Integer">
+			<column name="edloc" />
+		</property>
+	</class>
+</hibernate-mapping>

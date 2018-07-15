@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>项目进度</title>
+<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/my.css">
+
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5/dataTables.bootstrap.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="bootstrap-3.3.5/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.3.5/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.3.5/dataTables.bootstrap.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/processing.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="projects.html">
+		        <img src="img/icon.png">
+		      </a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		    	<ul class="nav navbar-nav">
+			        <li><a href="projects.html">主页</a></li>
+			        <li><a href="cloneconfigure.html">工具配置</a></li>
+			    </ul>
+		    </div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="pageTitle" id="projectsTitle">
+					<div class="titleFont">项目进度</div>
+					<hr class="titleHr">
+				</div>
+				<table class="table table-bordered datatable" id="processTable">
+					<thead>
+						<tr class="head">
+							<th width="15%"><strong><span>项目名</span></strong></th>
+							<th width="10%"><strong><span>英文名</span></strong></th>
+							<th width="10%"><strong><span>版本名</span></strong></th>
+							<th width="15%"><strong><span>起始时间</span></strong></th>
+							<th><strong><span>项目进度</span></strong></th>
+						</tr>
+						<tfoot>
+							<tr>
+								<th><input class="filter" type="text" placeholder="搜索项目"/></th>
+								<th><input class="filter" type="text" placeholder="搜索项目"/></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+						</tfoot>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

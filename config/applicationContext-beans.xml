@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd       
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	<bean id="projectsExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ProjectsExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="versionExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.VersionExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="oneVersionExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.OneVersionExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="filesExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.FilesExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+		<bean id="compareExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.CompareExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="oneCompareExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.OneCompareExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="changeFilesExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ChangeFilesExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="cloneConfigureService"
+		class="cn.edu.fudan.se.clonedetector.display.service.CloneConfigureService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="projectConfigureService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ProjectConfigureService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="diffExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.DiffExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="commitExtractService"
+		class="cn.edu.fudan.se.clonedetector.display.service.CommitExtractService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="extractRepoService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ExtractRepoService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="deleteProjectService"
+		class="cn.edu.fudan.se.clonedetector.display.service.DeleteProjectService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="extractCloneByFileService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ExtractCloneByFileService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="freshProjectService"
+		class="cn.edu.fudan.se.clonedetector.display.service.FreshProjectService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="getFileTreeService"
+		class="cn.edu.fudan.se.clonedetector.display.service.GetFileTreeService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	
+	<bean id="getTeamsService"
+		class="cn.edu.fudan.se.clonedetector.display.service.GetTeamsService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="deleteTeamService"
+		class="cn.edu.fudan.se.clonedetector.display.service.DeleteTeamService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="addTeamService"
+		class="cn.edu.fudan.se.clonedetector.display.service.AddTeamService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="UpdateProjectService"
+		class="cn.edu.fudan.se.clonedetector.display.service.UpdateProjectService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="UpdateVersionService"
+		class="cn.edu.fudan.se.clonedetector.display.service.UpdateVersionService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="GetOneProjectService"
+		class="cn.edu.fudan.se.clonedetector.display.service.GetOneProjectService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="DeleteCommitService"
+		class="cn.edu.fudan.se.clonedetector.display.service.DeleteCommitService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="GetClonesService"
+		class="cn.edu.fudan.se.clonedetector.display.service.GetClonesService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="ExtractCloneByCommitService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ExtractCloneByCommitService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="CCConfigureService"
+		class="cn.edu.fudan.se.clonedetector.display.service.CCConfigureService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="GetCCConfigService"
+		class="cn.edu.fudan.se.clonedetector.display.service.GetCCConfigService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="ProcessBarService"
+		class="cn.edu.fudan.se.clonedetector.display.service.ProcessBarService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="BackupDatabaseService"
+		class="cn.edu.fudan.se.clonedetector.display.service.BackupDatabaseService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="GetCompareLanguageService"
+		class="cn.edu.fudan.se.clonedetector.display.service.GetCompareLanguageService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+	<bean id="DeleteCloneService"
+		class="cn.edu.fudan.se.clonedetector.display.service.DeleteCloneService"
+		scope="prototype">
+		<property name="dao" ref="daoImpl"></property>
+	</bean>
+</beans>

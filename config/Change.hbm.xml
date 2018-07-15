@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.Change" table="Diff" catalog="zhonghui_data">
+        <id name="changeId" type="java.lang.Integer">
+            <column name="change_id" />
+            <generator class="increment" />
+        </id>
+        <property name="changeType" type="java.lang.Integer">
+            <column name="change_type" />
+        </property>
+        <property name="beginLine" type="java.lang.Integer">
+            <column name="begin_line" />
+        </property>
+        <property name="endLine" type="java.lang.Integer">
+            <column name="end_line" />
+        </property>
+        <property name="changeFragment" type="string">
+            <column name="change_fragment" length="65535" />
+        </property>
+        <property name="commitId" type="java.lang.Integer">
+            <column name="commit_id" />
+        </property>
+         <property name="compareId" type="java.lang.Integer">
+            <column name="compare_id" />
+        </property>
+                <property name="preCommitId" type="java.lang.Integer">
+            <column name="pre_commit_id" />
+        </property>
+        <property name="fileId" type="java.lang.Integer">
+            <column name="file_id" />
+        </property>
+        <property name="oldFileId" type="java.lang.Integer">
+            <column name="old_file_id" />
+        </property>
+         <property name="echloc" type="java.lang.Integer">
+            <column name="echloc" />
+        </property>
+        <property name="bchloc" type="java.lang.Integer">
+            <column name="bchloc" />
+        </property>
+        <property name="cmchloc" type="java.lang.Integer">
+            <column name="cmchloc" />
+        </property>
+    </class>
+</hibernate-mapping>

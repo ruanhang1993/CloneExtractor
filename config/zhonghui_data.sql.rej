@@ -1,0 +1,16 @@
+diff a/config/zhonghui_data.sql b/config/zhonghui_data.sql	(rejected hunks)
+@@ -256,12 +256,12 @@
+   `eccloc` int(32) DEFAULT NULL,
+   `commit_code` varchar(255) DEFAULT NULL,
+   `self_version_id` varchar(255) DEFAULT NULL,
+-  `submit_data` datetime DEFAULT NULL,
++  `submit_date` datetime DEFAULT NULL,
+   `submit_done_date` datetime DEFAULT NULL,
+   PRIMARY KEY (`commit_id`),
+   KEY `commit_fk1` (`author_id`),
+   KEY `commit_fk2` (`project_id`)
+-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
++) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+ /*!40101 SET character_set_client = @saved_cs_client */;
+ 
+ --

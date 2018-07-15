@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>版本克隆信息汇总</title>
+<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet"
+	href="bootstrap-3.3.5/dist/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/version.css">
+<link rel="stylesheet" type="text/css" href="css/my.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="bootstrap-3.3.5/jquery-3.1.0.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+
+<script src="js/versionDetailExtractor.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="js/exportTable/tableExport.js"></script>
+<script type="text/javascript" src="js/exportTable/jquery.base64.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="projects.html">
+		        <img src="img/icon.png">
+		      </a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		    	<ul class="nav navbar-nav">
+			        <li><a href="projects.html">主页</a></li>
+			        <!-- <li><a href="projectconfigure.html">项目配置</a></li> -->
+			        <li><a href="cloneconfigure.html">工具配置</a></li>
+			    </ul>
+		    </div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="pageTitle">
+					<div class="titleFont">版本克隆信息汇总</div>
+					<hr class="titleHr">
+				</div>
+				<h2 id="projectName" class="text-center"></h2>
+				<br />
+				<ul class="breadcrumb">
+					<li><a href="./projects.html">主页</a></li>
+					<li><span class="divider"><a
+							href="#" id="versionHistory">版本历史</a></span></li>
+					<li class="active" id="oneVersion"></li>
+				</ul>
+				<ul id="myTab" class="nav nav-tabs">
+					<li id="all_li" class="disabled"><a id="all_a" href="#" data-toggle="tab">All</a></li>
+				    <li id="java_li" class="disabled"><a id="java_a" href="#" data-toggle="tab">Java</a></li>
+				    <li id="cplusplus_li" class="disabled"><a id="cplusplus_a" href="#" data-toggle="tab">C/C++</a></li>
+				    <li id="csharp_li" class="disabled"><a id="csharp_a" href="#" data-toggle="tab">C#</a></li>
+				    <li id="vb_li" class="disabled"><a id="vb_a" href="#" data-toggle="tab">Vb</a></li>
+				    <li id="js_li" class="disabled"><a id="js_a" href="#" data-toggle="tab">Js</a></li>
+				    <li id="others_li" class="disabled"><a id="others_a" href="#" data-toggle="tab">Others</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="all">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover" id="all_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="all_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="all_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="all_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="all_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="all_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="all_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="all_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="all_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="all_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="all_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="all_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="all_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="all_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="all_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="all_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="all_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="all_cloneFileNum"></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#all_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="all_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="all_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="all_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="all_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="java">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover"
+											id="java_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="java_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="java_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="java_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="java_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="java_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="java_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="java_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="java_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="java_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="java_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="java_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="java_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="java_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="java_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="java_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="java_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="java_cloneFileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">源码语言</td>
+													<td id="java_language">Java</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#java_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="java_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="java_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="java_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="java_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="cplusplus">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover"
+											id="cplusplus_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="cplusplus_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="cplusplus_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="cplusplus_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="cplusplus_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="cplusplus_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="cplusplus_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="cplusplus_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="cplusplus_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="cplusplus_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="cplusplus_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="cplusplus_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="cplusplus_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="cplusplus_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="cplusplus_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="cplusplus_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="cplusplus_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="cplusplus_cloneFileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">源码语言</td>
+													<td id="cplusplus_language">C/C++</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#cplusplus_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="cplusplus_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="cplusplus_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="cplusplus_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="cplusplus_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="csharp">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover"
+											id="csharp_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="csharp_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="csharp_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="csharp_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="csharp_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="csharp_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="csharp_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="csharp_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="csharp_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="csharp_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="csharp_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="csharp_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="csharp_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="csharp_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="csharp_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="csharp_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="csharp_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="csharp_cloneFileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">源码语言</td>
+													<td id="csharp_language">C#</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#csharp_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="csharp_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="csharp_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="csharp_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="csharp_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="vb">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover"
+											id="vb_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="vb_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="vb_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="vb_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="vb_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="vb_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="vb_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="vb_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="vb_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="vb_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="vb_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="vb_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="vb_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="vb_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="vb_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="vb_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="vb_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="vb_cloneFileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">源码语言</td>
+													<td id="vb_language">vb</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#vb_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="vb_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="vb_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="vb_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="vb_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="js">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover"
+											id="js_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="js_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="js_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="js_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="js_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="js_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="js_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="js_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="js_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="js_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="js_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="js_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="js_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="js_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="js_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="js_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="js_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="js_cloneFileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">源码语言</td>
+													<td id="js_language">JavaScript</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#js_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="js_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="js_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="js_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="js_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="others">
+				    	<div class="row">
+							<div class="col-sm-5">
+								<div class="row-fluid">
+									<div class="span12">
+										<table class="table table-bordered table-hover"
+											id="others_verstiondetail" style="border:none;">
+											<thead>
+												<tr>
+													<th style="border:none;"></th>
+													<th class="radius" style="border:none;">数 值</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="head">版本号</td>
+													<td id="others_revisionId"></td>
+												</tr>
+												<tr>
+													<td class="head">提交日期</td>
+													<td id="others_commitDate"></td>
+												</tr>
+												<tr>
+													<td class="head">开始日期</td>
+													<td id="others_startDate"></td>
+												</tr>
+												<tr>
+													<td class="head">完成日期</td>
+													<td id="others_endDate"></td>
+												</tr>
+												<tr>
+													<td class="head">总代码行</td>
+													<td id="others_loc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效代码行</td>
+													<td id="others_eloc"></td>
+												</tr>
+												<tr>
+													<td class="head">注释</td>
+													<td id="others_note"></td>
+												</tr>
+												<tr>
+													<td class="head">空行</td>
+													<td id="others_blank"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆代码行</td>
+													<td id="others_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>有效克隆代码行</span></td>
+													<td id="others_ecloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆注释行</span></td>
+													<td id="others_note_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head"><span>克隆空行</span></td>
+													<td id="others_blank_cloc"></td>
+												</tr>
+												<tr>
+													<td class="head">有效克隆比例</td>
+													<td id="others_ecloneRate"></td>
+												</tr>
+												<tr>
+													<td class="head">折算行数</td>
+													<td id="others_finalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">折算有效行数</td>
+													<td id="others_efinalLine"></td>
+												</tr>
+												<tr>
+													<td class="head">总文件数</td>
+													<td id="others_fileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">克隆文件数</td>
+													<td id="others_cloneFileNum"></td>
+												</tr>
+												<tr>
+													<td class="head">源码语言</td>
+													<td id="others_language">others</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row-fluid">
+											<div class="col-sm-12" align="right">
+												<button class="btn btn-default" type="button"
+											onClick="$('#others_verstiondetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+												<button class="btn btn-primary" type="button" id="others_filedetailbtn">查看详情</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-7">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="others_eCloneLocChart" width="400" height="400"></canvas>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="others_cloneFileChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<canvas id="others_cloneLocChart" width="400" height="400"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+				    </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

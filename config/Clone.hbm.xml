@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.Clone" table="clone" catalog="zhonghui_data">
+        <id name="cloneId" type="java.lang.Integer">
+            <column name="clone_id" />
+            <generator class="increment" />
+        </id>
+        <property name="beginLine" type="java.lang.Integer">
+            <column name="begin_line" />
+        </property>
+        <property name="endLine" type="java.lang.Integer">
+            <column name="end_line" />
+        </property>
+         <property name="ecloc" type="java.lang.Integer">
+            <column name="ecloc" />
+        </property>
+        <property name="bcloc" type="java.lang.Integer">
+            <column name="bcloc" />
+        </property>
+        <property name="cmcloc" type="java.lang.Integer">
+            <column name="cmcloc" />
+        </property>
+        <property name="ccloc" type="java.lang.Integer">
+            <column name="ccloc" />
+        </property>
+        <property name="eccloc" type="java.lang.Integer">
+            <column name="eccloc" />
+        </property>
+        <property name="cloneFragment" type="string">
+            <column name="clone_fragment" length="65535" />
+        </property>
+        <property name="cloneSize" type="java.lang.Integer">
+            <column name="clone_size" />
+        </property>
+        <property name="cloneType" type="java.lang.Integer">
+            <column name="clone_type" />
+        </property>
+        <property name="fileId" type="java.lang.Integer">
+            <column name="file_id" />
+        </property>
+        <property name="cloneClassId" type="java.lang.Integer">
+            <column name="clone_class_id" />
+        </property>
+        <property name="commitId" type="java.lang.Integer">
+            <column name="commit_id" />
+        </property>
+        <property name="repeatTime" type="java.lang.Integer">
+            <column name="repeat_time" />
+        </property>
+      
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>版本历史</title>
+<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet"
+	href="bootstrap-3.3.5/dist/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css"
+	href="bootstrap-3.3.5/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/load5.css">
+<link rel="stylesheet" type="text/css" href="css/my.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="bootstrap-3.3.5/jquery-3.1.0.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.3.5/jquery.js"></script>
+<script type="text/javascript"
+	src="bootstrap-3.3.5/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+	src="bootstrap-3.3.5/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="js/versionExtractor.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+
+<script type="text/javascript" src="js/exportTable/tableExport.js"></script>
+<script type="text/javascript" src="js/exportTable/jquery.base64.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"
+	charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js"
+	charset="UTF-8"></script>
+<script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="js/jspdf.debug.js"></script>
+</head>
+<body>
+	<div id="coverarea">
+		<div class="load-container load5">
+			<div class="loader"></div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="projects.html">
+		        <img src="img/icon.png">
+		      </a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		    	<ul class="nav navbar-nav">
+			        <li><a href="projects.html">主页</a></li>
+			        <!-- <li><a href="projectconfigure.html">项目配置</a></li> -->
+			        <li><a href="cloneconfigure.html">工具配置</a></li>
+			    </ul>
+			    <a class="btn btn-primary navbar-right create-btn" type="button" id="versionHisBtn" href="#">生成报表</a>
+		    </div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="pageTitle">
+					<div class="titleFont">版本历史</div>
+					<hr class="titleHr">
+				</div>
+				<h2 class="text-center" id="projectName"></h2>
+				<br />
+				<ul class="breadcrumb">
+					<li><a href="./projects.html">主页</a></li>
+					<li class="active">版本历史</li>
+				</ul>
+				<div class="chart" style="width:75%;">
+					<canvas id="lineChart"></canvas>
+				</div>
+				<table class="table table-striped table-bordered table-hover datatable" id="versionhis">
+					<thead>
+						<tr class="head">
+							<th></th>
+							<th>选择</th>
+							<th>版本号</th>
+							<th>文件数</th>
+							<th>代码行</th>
+							<th>有效代码行</th>
+							<th>克隆代码行</th>
+							<th>折算代码行</th>
+							<th>扫描日期</th>
+							<th>完成日期</th>
+							<th>汇总</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+					<tfoot>
+							<tr>
+								<th></th>
+								<th></th>
+								<th><input class="filter" type="text" placeholder="搜索版本号"/></th>
+								<th><input class="filter" type="text" placeholder="搜索文件数"/></th>
+								<th><input class="filter" type="text" placeholder="搜索代码行"/></th>
+								<th><input class="filter" type="text" placeholder="搜索有效代码行"/></th>
+								<th><input class="filter" type="text" placeholder="搜索克隆代码行"/></th>
+								<th><input class="filter" type="text" placeholder="搜索折算代码行"/></th>
+								<th><input class="filter" type="text" placeholder="搜索扫描日期"/></th>
+								<th><input class="filter" type="text" placeholder="搜索完成日期"/></th>
+								<th></th>
+								<th></th>
+							</tr>
+						</tfoot>
+				</table>
+				<div class="row-fluid">
+					<div class="clo-sm-6" align="right">
+						<div class="form-group">
+							<button class="btn btn-primary" type="button" id="diffExtractBtn" style="float:right;margin-left: 10px; margin-bottom: 20px;">变更比较</button>
+							<div class="input-group date form_datetime col-md-5"
+								data-date="1979-09-16T05:25:07Z"
+								data-date-format="dd MM yyyy - HH:ii p"
+								data-link-field="dtp_input1"
+								style="float:right;">
+								<input class="form-control" size="4" type="text" value=""
+									readonly> <span class="input-group-addon"><span
+									class="glyphicon glyphicon-remove"></span></span> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-th"></span></span>
+							</div>
+							<input type="hidden" id="dtp_input1" value="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+		$('.form_datetime').datetimepicker({
+			//language:  'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0,
+			showMeridian : 1
+		});
+	</script>
+
+</body>
+</html>

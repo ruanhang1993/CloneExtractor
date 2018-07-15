@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:06:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.Author" table="author" catalog="zhonghui_data">
+        <id name="authorId" type="java.lang.Integer">
+            <column name="author_id" />
+            <generator class="increment" />
+        </id>
+        <property name="authorNick" type="string">
+            <column name="author_nick" />
+        </property>
+        <property name="authorName" type="string">
+            <column name="author_name" />
+        </property>
+        <property name="commitId" type="java.lang.Integer">
+            <column name="commit_id" />
+        </property>
+    </class>
+</hibernate-mapping>

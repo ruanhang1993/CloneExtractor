@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>变更信息汇总</title>
+<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet"
+	href="bootstrap-3.3.5/dist/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/version.css">
+<link rel="stylesheet" type="text/css" href="css/my.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="bootstrap-3.3.5/jquery-3.1.0.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+
+<script src="js/compareDetailExtractor.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="js/exportTable/tableExport.js"></script>
+<script type="text/javascript" src="js/exportTable/jquery.base64.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="projects.html">
+		        <img src="img/icon.png">
+		      </a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		    	<ul class="nav navbar-nav">
+			        <li><a href="projects.html">主页</a></li>
+			        <!-- <li><a href="projectconfigure.html">项目配置</a></li> -->
+			        <li><a href="cloneconfigure.html">工具配置</a></li>
+			    </ul>
+		    </div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="pageTitle">
+					<div class="titleFont">变更信息汇总</div>
+					<hr class="titleHr">
+				</div>
+				<h2 id="projectName" class="text-center"></h2>
+				<br />
+				<ul class="breadcrumb">
+					<li><a href="./projects.html">主页</a></li>
+					<li><span class="divider"><a
+							href="#" id="compareHistory">比较历史</a></span></li>
+					<li class="active" id="oneCompare"></li>
+
+				</ul>
+				<br />
+				<div class="row">
+					<div class="col-sm-5">
+						<div class="row">
+							<div class="col-sm-12">
+								<table class="table table-bordered table-hover"
+									id="comparedetail" style="border:none;">
+									<thead>
+										<tr>
+											<th style="border:none;"></th>
+											<th class="radius" style="border:none;">数 值</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="head">前一版本号</td>
+											<td id="preRevisionId"></td>
+										</tr>
+										<tr>
+											<td class="head">版本号</td>
+											<td id="revisionId"></td>
+										</tr>
+										<tr>
+											<td class="head">比较执行日期</td>
+											<td id="compareDate"></td>
+										</tr>
+										<tr>
+											<td class="head">比较完成日期</td>
+											<td id="finishDate"></td>
+										</tr>
+										<tr>
+											<td class="head">总变更代码行</td>
+											<td id="chloc"></td>
+										</tr>
+										<tr>
+											<td class="head">变更注释行</td>
+											<td id="noteChloc"></td>
+										</tr>
+										<tr>
+											<td class="head">变更空行</td>
+											<td id="blankChloc"></td>
+										</tr>
+										<tr>
+											<td class="head">有效变更代码行</td>
+											<td id="echloc"></td>
+										</tr>
+										<tr>
+											<td class="head">增加克隆代码行</td>
+											<td id="cloc"></td>
+										</tr>
+										<tr>
+											<td class="head">克隆中增加注释行</td>
+											<td id="noteCloc"></td>
+										</tr>
+										<tr>
+											<td class="head">克隆中增加空行</td>
+											<td id="blankCloc"></td>
+										</tr>
+										<tr>
+											<td class="head">有效增加克隆代码行</td>
+											<td id="ecloc"></td>
+										</tr>
+										<tr>
+											<td class="head">删除克隆代码行</td>
+											<td id="dcloc"></td>
+										</tr>
+										<tr>
+											<td class="head">克隆中删除注释行</td>
+											<td id="noteDcloc"></td>
+										</tr>
+										<tr>
+											<td class="head">克隆中删除空行</td>
+											<td id="blankDcloc"></td>
+										</tr>
+										<tr>
+											<td class="head">有效删除克隆代码行</td>
+											<td id="edcloc"></td>
+										</tr>
+										<tr>
+											<td class="head">变更克隆比例</td>
+											<td id="cloneRate"></td>
+										</tr>
+										<tr>
+											<td class="head">有效变更克隆比例</td>
+											<td id="ecloneRate"></td>
+										</tr>
+										<tr>
+											<td class="head">总变更文件数</td>
+											<td id="fileNum"></td>
+										</tr>
+										<tr>
+											<td class="head">克隆变更文件数</td>
+											<td id="cloneFileNum"></td>
+										</tr>
+										<tr>
+											<td class="head">版本跨度</td>
+											<td id="versionSpan"></td>
+										</tr>
+										<tr>
+											<td class="head">时间跨度</td>
+											<td id="timeSpan"></td>
+										</tr>
+										<tr>
+											<td class="head">源码语言</td>
+											<td id="language"></td>
+										</tr>
+										<tr>
+											<td class="head">折算后代码</td>
+											<td id="finalLine"></td>
+										</tr>
+										<tr>
+											<td class="head">折算后有效代码</td>
+											<td id="efinalLine"></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="row">
+									<div class="col-sm-12" align="right">
+										<button class="btn btn-default" type="button" onClick="$('#comparedetail').tableExport({type:'excel',escape:'false'});">生成报表</button>
+										<button class="btn btn-primary" type="button" id="comparefilebtn">查看详情</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<canvas id="cloneLocChart" width="300" height="300"></canvas>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<canvas id="eCloneLocChart" width="400" height="400"></canvas>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<canvas id="cloneFileChart" width="400" height="400"></canvas>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<canvas id="cloneFileTypeChart" width="400" height="400"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

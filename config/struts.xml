@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<package name="Zhonghui" extends="json-default">		
+		<action name="extractProjects" class="projectsExtractAction"
+			method="extractProjects">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractVersions" class="versionExtractAction"
+			method="extractVersions">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractOneVersion" class="oneVersionExtractAction"
+			method="extractOneVersion">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractFiles" class="filesExtractAction"
+			method="extractFiles">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractCompares" class="compareExtractAction"
+			method="extractCompares">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractOneCompare" class="oneCompareExtractAction"
+			method="extractOneCompare">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractChangeFiles" class="changeFilesExtractAction"
+			method="extractChangeFiles">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="cloneConfigure" class="cloneConfigureAction"
+			method="cloneConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extactCloneConfigure" class="cloneConfigureAction"
+			method="getCloneConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="projectConfigure" class="projectConfigureAction"
+			method="projectConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractDiff" class="diffExtractAction"
+			method="extractDiff">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractLastCommit" class="CommitExtractAction"
+			method="extractLastCommit">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractRepo" class="ExtractRepoAction"
+			method="extractRepo">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="deleteProject" class="DeleteProjectAction"
+			method="deleteProject">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractCloneByFile" class="ExtractCloneByFileAction"
+			method="extractCloneByFile">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="freshProject" class="FreshProjectAction"
+			method="freshProject">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="getFileTree" class="GetFileTreeAction"
+			method="getFileTree">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		
+		<action name="getTeams" class="GetTeamsAction"
+			method="getAllTeams">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="deleteTeam" class="DeleteTeamAction"
+			method="deleteTeam">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="addTeam" class="AddTeamAction"
+			method="addTeam">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="updateVersion" class="UpdateVersionAction"
+			method="updateVersion">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="updateProject" class="UpdateProjectAction"
+			method="updateProject">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="getOneProject" class="GetOneProjectAction"
+			method="getOneProject">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="deleteCommit" class="DeleteCommitAction"
+			method="deleteCommit">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="getClones" class="GetClonesAction"
+			method="getCloneObjects">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="extractCloneByCommit" class="ExtractCloneByCommitAction"
+			method="extractCloneByCommit">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="getCCConfig" class="GetCCConfigAction"
+			method="getCCConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="addCCConfig" class="CCConfigureAction"
+			method="addCCConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="updateCCConfig" class="CCConfigureAction"
+			method="updateCCConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="delCCConfig" class="CCConfigureAction"
+			method="delCCConfigure">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="getProcessBar" class="ProcessBarAction"
+			method="getProcessBar">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="backupDatabase" class="BackupDatabaseAction"
+			method="backupDatabase">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="readBackupList" class="ReadBackupListAction"
+			method="readBackupList">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="restoreDatabase" class="RestoreDatabaseAction"
+			method="restoreDatabase">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="getCompareLanguage" class="GetCompareLanguageAction"
+			method="getCompareLanguage">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+		<action name="deleteClone" class="DeleteCloneAction"
+			method="deleteClone">
+			<result name="SUCCEED" type="json" />
+			<result name="FAIL" type="json" />
+		</action>
+	</package>
+</struts>

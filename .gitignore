@@ -1,0 +1,7 @@
+/build/
+*.ccfxd
+*.tmp
+hibernate.cfg.xml
+Compare.java
+Extract.java
+ProjectConfigureService.java

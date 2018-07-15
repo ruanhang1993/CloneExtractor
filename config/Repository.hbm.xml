@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="cn.edu.fudan.se.clonedetector.bean.Repository"
+		table="repository" catalog="zhonghui_data">
+		<id name="repositoryId" type="java.lang.Integer">
+			<column name="repository_id" />
+			<generator class="increment" />
+		</id>
+		<property name="url" type="string">
+			<column name="url" />
+		</property>
+		<property name="username" type="string">
+			<column name="username" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" />
+		</property>
+		<property name="language" type="string">
+			<column name="language" />
+		</property>
+		<property name="commitDate" type="timestamp">
+			<column name="commit_date" length="0" />
+		</property>
+		<property name="processDate" type="timestamp">
+			<column name="process_date" length="0" />
+		</property>
+		<property name="analyzeType" type="java.lang.Integer">
+			<column name="analyze_type" length="0" />
+		</property>
+	</class>
+</hibernate-mapping>

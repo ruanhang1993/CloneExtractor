@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.Project" table="project" catalog="zhonghui_data">
+        <id name="projectId" type="java.lang.Integer">
+            <column name="project_id" />
+            <generator class="increment" />
+        </id>
+        <property name="projectNameCh" type="string">
+            <column name="project_name_ch" />
+        </property>
+        <property name="projectNameEn" type="string">
+            <column name="project_name_en" />
+        </property>
+        <property name="developCompany" type="string">
+            <column name="develop_company" />
+        </property>
+        <property name="projectPath" type="string">
+            <column name="project_path" />
+        </property>
+        <property name="projectLanguage" type="string">
+            <column name="project_language" />
+        </property>
+        <property name="commitId" type="java.lang.Integer">
+            <column name="commit_id" />
+        </property>
+        <property name="repositoryId" type="java.lang.Integer">
+            <column name="repository_id" />
+        </property>
+        <property name="projectTeam" type="string">
+            <column name="project_team" />
+        </property>
+        <property name="stream" type="string">
+            <column name="stream" />
+        </property>
+        <property name="pvob" type="string">
+            <column name="pvob" />
+        </property>
+        <property name="component" type="string">
+            <column name="component" />
+        </property>
+        <property name="view" type="string">
+            <column name="view" />
+        </property>
+        <property name="viewLocalPath" type="string">
+            <column name="view_local_path" />
+        </property>
+    </class>
+</hibernate-mapping>

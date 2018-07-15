@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.CloneClass" table="clone_class" catalog="zhonghui_data">
+        <id name="cloneClassId" type="java.lang.Integer">
+            <column name="clone_class_id" />
+            <generator class="increment" />
+        </id>
+        <property name="commitId" type="java.lang.Integer">
+            <column name="commit_id" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+
+    </class>
+</hibernate-mapping>

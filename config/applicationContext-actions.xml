@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd       
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<bean id="projectsExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ProjectsExtractAction"
+		scope="prototype">
+		<property name="service" ref="projectsExtractService"></property>
+	</bean>
+	<bean id="versionExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.VersionExtractAction"
+		scope="prototype">
+		<property name="service" ref="versionExtractService"></property>
+	</bean>
+	<bean id="oneVersionExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.OneVersionExtractAction"
+		scope="prototype">
+		<property name="service" ref="oneVersionExtractService"></property>
+	</bean>
+	<bean id="filesExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.FilesExtractAction"
+		scope="prototype">
+		<property name="service" ref="filesExtractService"></property>
+	</bean>
+	<bean id="compareExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.CompareExtractAction"
+		scope="prototype">
+		<property name="service" ref="compareExtractService"></property>
+	</bean>
+	<bean id="oneCompareExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.OneCompareExtractAction"
+		scope="prototype">
+		<property name="service" ref="oneCompareExtractService"></property>
+	</bean>
+	<bean id="changeFilesExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ChangeFilesExtractAction"
+		scope="prototype">
+		<property name="service" ref="changeFilesExtractService"></property>
+	</bean>
+	<bean id="cloneConfigureAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.CloneConfigureAction"
+		scope="prototype">
+		<property name="service" ref="cloneConfigureService"></property>
+	</bean>
+	<bean id="projectConfigureAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ProjectConfigureAction"
+		scope="prototype">
+		<property name="service" ref="projectConfigureService"></property>
+	</bean>
+	<bean id="diffExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.DiffExtractAction"
+		scope="prototype">
+		<property name="service" ref="diffExtractService"></property>
+	</bean>
+	<bean id="CommitExtractAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.CommitExtractAction"
+		scope="prototype">
+		<property name="service" ref="commitExtractService"></property>
+	</bean>
+	<bean id="ExtractRepoAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ExtractRepoAction"
+		scope="prototype">
+		<property name="service" ref="extractRepoService"></property>
+	</bean>
+	<bean id="DeleteProjectAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.DeleteProjectAction"
+		scope="prototype">
+		<property name="service" ref="deleteProjectService"></property>
+	</bean>
+	<bean id="ExtractCloneByFileAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ExtractCloneByFileAction"
+		scope="prototype">
+		<property name="service" ref="extractCloneByFileService"></property>
+	</bean>
+	<bean id="FreshProjectAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.FreshProjectAction"
+		scope="prototype">
+		<property name="service" ref="freshProjectService"></property>
+	</bean>
+	<bean id="GetFileTreeAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.GetFileTreeAction"
+		scope="prototype">
+		<property name="service" ref="getFileTreeService"></property>
+	</bean>
+	
+	<bean id="GetTeamsAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.GetTeamsAction"
+		scope="prototype">
+		<property name="service" ref="getTeamsService"></property>
+	</bean>
+	<bean id="DeleteTeamAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.DeleteTeamAction"
+		scope="prototype">
+		<property name="service" ref="deleteTeamService"></property>
+	</bean>
+	<bean id="AddTeamAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.AddTeamAction"
+		scope="prototype">
+		<property name="service" ref="addTeamService"></property>
+	</bean>
+	<bean id="UpdateVersionAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.UpdateVersionAction"
+		scope="prototype">
+		<property name="service" ref="UpdateVersionService"></property>
+	</bean>
+	<bean id="UpdateProjectAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.UpdateProjectAction"
+		scope="prototype">
+		<property name="service" ref="UpdateProjectService"></property>
+	</bean>
+	<bean id="GetOneProjectAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.GetOneProjectAction"
+		scope="prototype">
+		<property name="service" ref="GetOneProjectService"></property>
+	</bean>
+	<bean id="DeleteCommitAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.DeleteCommitAction"
+		scope="prototype">
+		<property name="service" ref="DeleteCommitService"></property>
+	</bean>
+	<bean id="GetClonesAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.GetClonesAction"
+		scope="prototype">
+		<property name="service" ref="GetClonesService"></property>
+	</bean>
+	<bean id="ExtractCloneByCommitAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ExtractCloneByCommitAction"
+		scope="prototype">
+		<property name="service" ref="ExtractCloneByCommitService"></property>
+	</bean>
+	<bean id="CCConfigureAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.CCConfigureAction"
+		scope="prototype">
+		<property name="service" ref="CCConfigureService"></property>
+	</bean>
+	<bean id="GetCCConfigAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.GetCCConfigAction"
+		scope="prototype">
+		<property name="service" ref="GetCCConfigService"></property>
+	</bean>
+	<bean id="ProcessBarAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ProcessBarAction"
+		scope="prototype">
+		<property name="service" ref="ProcessBarService"></property>
+	</bean>
+	<bean id="BackupDatabaseAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.BackupDatabaseAction"
+		scope="prototype">
+		<property name="service" ref="BackupDatabaseService"></property>
+	</bean>
+	<bean id="ReadBackupListAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.ReadBackupListAction"
+		scope="prototype">
+		<property name="service" ref="BackupDatabaseService"></property>
+	</bean>
+	<bean id="RestoreDatabaseAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.RestoreDatabaseAction"
+		scope="prototype">
+		<property name="service" ref="BackupDatabaseService"></property>
+	</bean>
+	<bean id="GetCompareLanguageAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.GetCompareLanguageAction"
+		scope="prototype">
+		<property name="service" ref="GetCompareLanguageService"></property>
+	</bean>
+	<bean id="DeleteCloneAction"
+		class="cn.edu.fudan.se.clonedetector.display.action.DeleteCloneAction"
+		scope="prototype">
+		<property name="service" ref="DeleteCloneService"></property>
+	</bean>
+</beans>

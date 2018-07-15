@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-5-20 10:49:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.edu.fudan.se.clonedetector.bean.Commit" table="commit" catalog="zhonghui_data">
+        <id name="commitId" type="java.lang.Integer">
+            <column name="commit_id" />
+            <generator class="increment" />
+        </id>
+        <property name="revisionId" type="string">
+            <column name="revision_id" />
+        </property>
+        <property name="preRevisionId" type="string">
+            <column name="pre_revision_id" />
+        </property>
+        <property name="commitDate" type="timestamp">
+            <column name="commit_date" length="0" />
+        </property>
+        <property name="submitDate" type="timestamp">
+            <column name="submit_date" length="0" />
+        </property>
+        <property name="submitDoneDate" type="timestamp">
+            <column name="submit_done_date" length="0" />
+        </property>
+        <property name="scanDate" type="timestamp">
+            <column name="scan_date" length="0" />
+        </property>
+        <property name="commitLog" type="string">
+            <column name="commit_log" />
+        </property>
+        <property name="commitCode" type="string">
+            <column name="commit_code" />
+        </property>
+        
+        <property name="selfVersionId" type="string">
+            <column name="self_version_id" />
+        </property>
+        
+        <property name="authorId" type="java.lang.Integer">
+            <column name="author_id" />
+        </property>
+        <property name="projectId" type="java.lang.Integer">
+            <column name="project_id" />
+        </property>
+        <property name="fileNum" type="java.lang.Integer">
+            <column name="file_num" />
+        </property>
+        <property name="cloneFileNum" type="java.lang.Integer">
+            <column name="clone_file_num" />
+        </property>
+        <property name="loc" type="java.lang.Integer">
+            <column name="loc" />
+        </property>
+        <property name="eloc" type="java.lang.Integer">
+            <column name="eloc" />
+        </property>
+        <property name="cloc" type="java.lang.Integer">
+            <column name="cloc" />
+        </property>
+        <property name="ecloc" type="java.lang.Integer">
+            <column name="ecloc" />
+        </property>
+        <property name="bloc" type="java.lang.Integer">
+            <column name="bloc" />
+        </property>
+        <property name="cmloc" type="java.lang.Integer">
+            <column name="cmloc" />
+        </property>
+        <property name="bcloc" type="java.lang.Integer">
+            <column name="bcloc" />
+        </property>
+        <property name="cmcloc" type="java.lang.Integer">
+            <column name="cmcloc" />
+        </property>
+        <property name="ccloc" type="java.lang.Integer">
+            <column name="ccloc" />
+        </property>
+        <property name="eccloc" type="java.lang.Integer">
+            <column name="eccloc" />
+        </property>
+        <property name="stage" type="java.lang.Integer">
+            <column name="stage" />
+        </property>
+    </class>
+</hibernate-mapping>
